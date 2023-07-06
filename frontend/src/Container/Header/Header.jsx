@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import AnimatioData from "../../assets/animations/profile.json";
 import Lottie from "lottie-react";
+import { AppWrap } from "../../wrapper";
 
 import { images } from "../../constants";
 import "./Header.scss";
@@ -18,7 +19,6 @@ const scaleVariants = {
 };
 
 const Header = () => {
-  
   return (
     <div className="app__header app__flex">
       <motion.div
@@ -31,14 +31,19 @@ const Header = () => {
             <span>👋</span>
             <div style={{ marginLeft: 20 }}>
               <p className="p-text">Hello, I am</p>
-              <h1 className="head-text">HariKrishnan</h1>
+              <h1 className="head-text shake-text">HariKrishnan</h1>
             </div>
           </div>
 
           <div className="tag-cmp app__flex">
-          <p className="p-text">Web Developer</p>
-          <p className="p-text">Freelancer</p>
-        </div>
+            <p className="p-text">Web <span> </span>
+            <span>
+              <span className="p-span">Designer</span>
+              <span className="p-span">Developer</span>
+              <span className="p-span">Architect</span>
+            </span>
+            </p>
+          </div>
         </div>
       </motion.div>
 
@@ -75,4 +80,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, "home");

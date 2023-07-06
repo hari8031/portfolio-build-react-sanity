@@ -75,9 +75,45 @@
     margin-top: 3rem;
 
     p {
+      font-size: 1rem;
+      font-weight: 800;
       width: 100%;
       text-transform: uppercase;
       text-align: right;
+
+      > span {
+        position: relative;
+        display: inline-block;
+        vertical-align: bottom;
+        overflow: hidden;
+        height: 1.25rem;
+        span {
+          display: block;
+          animation: animateWords 10s infinite ease;
+        }
+      }
+    }
+    @keyframes animateWords {
+      0% {
+        transform: translateY(0%);
+      }
+      25% {
+        transform: translateY(-100%);
+      }
+      50% {
+        transform: translateY(-200%);
+      }
+      75% {
+        transform: translateY(-300%);
+      }
+      100%{
+        transform: translateY(-400%);
+      }
+    }
+    .p-span {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--gray-color);
     }
   }
 
@@ -113,11 +149,14 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
     img {
-        width: 60%;
-        height: 60%;
-        
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.5);
       }
-
+    }
   }
 
   // circles with different height & width
@@ -128,17 +167,19 @@
   }
 
   div:nth-child(2) {
-    margin: 1.75rem;
+    margin: 1rem;
     width: 150px;
     height: 150px;
   }
 
   div:nth-child(3) {
-    width: 70px;
+    width: 100px;
+    height: 100px;
+  }
+  div:nth-child(4) {
+    width: 50px;
     height: 70px;
   }
-  
-
   @media screen and (min-width: 2000px) {
     div:nth-child(2) {
       width: 400px;
